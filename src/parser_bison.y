@@ -213,6 +213,7 @@ int nft_lex(void *, void *, void *);
 
 %token SOCKET			"socket"
 %token TRANSPARENT		"transparent"
+%token WILDCARD			"wildcard"
 
 %token TPROXY			"tproxy"
 
@@ -4581,6 +4582,7 @@ socket_expr		:	SOCKET	socket_key
 
 socket_key 		: 	TRANSPARENT	{ $$ = NFT_SOCKET_TRANSPARENT; }
 			|	MARK		{ $$ = NFT_SOCKET_MARK; }
+			|	WILDCARD	{ $$ = NFT_SOCKET_WILDCARD; }
 			;
 
 offset_opt		:	/* empty */	{ $$ = 0; }
