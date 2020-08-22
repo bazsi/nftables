@@ -2,7 +2,7 @@
 
 # Configuration
 TESTDIR="./$(dirname $0)/testcases"
-SRC_NFT="$(dirname $0)/../../src/nft"
+SRC_NFT=${NFT:-../../src/nft}
 DIFF=$(which diff)
 
 msg_error() {
